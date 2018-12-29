@@ -7,7 +7,7 @@ procedure Main is
 begin
 
    declare
-      Final_Freq, Calibration_Freq : Frequency;
+      Final_Freq, Calibration_Freq : Frequency := Frequency'Invalid_Value;
    begin
       Day1 (Final_Freq, Calibration_Freq);
       Put_Line ("Day 1:");
@@ -16,7 +16,7 @@ begin
    end;
 
    declare
-      Checksum : Warehouse_Checksum;
+      Checksum : Warehouse_Checksum := Warehouse_Checksum'Invalid_Value;
       Common   : String := Day2 (Checksum);
    begin
       Put_Line ("Day 2:");
@@ -25,11 +25,14 @@ begin
    end;
 
    declare
-      Conflict_Fabric : Fabric_Extent;
+      Conflict_Fabric : Fabric_Extent := Fabric_Extent'Invalid_Value;
+      Safe_Claim      : Positive;
    begin
+      Conflict_Fabric := Day3 (Safe_Claim);
       Put_Line ("Day 3:");
       Put_Line (ASCII.HT & "Conflicting claims on " & Conflict_Fabric'Image
                 & " square inches of the fabric.");
+      Put_Line (ASCII.HT & "Safe claim: " & Safe_Claim'Image);
    end;
 
 end Main;

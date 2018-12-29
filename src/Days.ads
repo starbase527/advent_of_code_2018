@@ -11,6 +11,6 @@ package Days is
    function Day2 (Checksum : out Warehouse_Checksum) return String;
 
    subtype Fabric_Extent is Integer range 0 .. 1000*1000;
-   function Day3 return Fabric_Extent;
+   function Day3 (Safe_Claim : out Positive) return Fabric_Extent;
 
 end Days;

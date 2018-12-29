@@ -6,6 +6,6 @@ package body Days is
 
    function Day2 (Checksum : out Warehouse_Checksum) return String is separate;
 
-   function Day3 return Fabric_Extent is separate;
+   function Day3 (Safe_Claim : out Positive) return Fabric_Extent is separate;
 
 end Days;
