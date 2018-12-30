@@ -8,4 +8,7 @@ package body Days is
 
    function Day3 (Safe_Claim : out Positive) return Fabric_Extent is separate;
 
+   procedure Day4 (Guard_Asleep_Longest : out GuardID;
+                   Minute_Most_Asleep   : out Ada.Calendar.Formatting.Minute_Number) is separate;
+
 end Days;

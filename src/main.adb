@@ -1,6 +1,7 @@
 
 with Days;    use Days;
 with Text_IO; use Text_IO;
+with Ada.Calendar.Formatting;
 
 procedure Main is
 
@@ -33,6 +34,20 @@ begin
       Put_Line (ASCII.HT & "Conflicting claims on " & Conflict_Fabric'Image
                 & " square inches of the fabric.");
       Put_Line (ASCII.HT & "Safe claim: " & Safe_Claim'Image);
+   end;
+
+   declare
+      Guard_Asleep_Longest : GuardID;
+      Most_Asleep_Minute   : Ada.Calendar.Formatting.Minute_Number;
+      type Guard_Minute_ID is range
+        GuardID'First * Ada.Calendar.Formatting.Minute_Number'First
+          .. GuardID'Last * Ada.Calendar.Formatting.Minute_Number'Last;
+      GMI : Guard_Minute_ID;
+   begin
+      Day4 (Guard_Asleep_Longest, Most_Asleep_Minute);
+      GMI := Guard_Minute_ID (Guard_Asleep_Longest * Most_Asleep_Minute);
+      Put_Line ("Day 4:");
+      Put_Line ("ID of guard asleep most * minute most asleep: " & GMI'Image);
    end;
 
 end Main;
